@@ -1,0 +1,18 @@
+plugins { id 'com.android.application' }
+
+android { namespace 'com.mx5.autoclock'; compileSdk 36
+    // applicationId dedicato: distinto da com.mx5.driversmetrics (progetto pilota) così le
+    // due app possono restare installate insieme sullo stesso telefono.
+    defaultConfig { applicationId 'com.mx5.autoclock'; minSdk 28; targetSdk 36; versionCode 1; versionName '1.0' }
+    packaging {
+        resources {
+            excludes += ['META-INF/LICENSE.txt', 'META-INF/LICENSE.md', 'META-INF/NOTICE.txt', 'META-INF/NOTICE.md', 'META-INF/DEPENDENCIES']
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.car.app:app:1.7.0'
+    implementation 'androidx.car.app:app-projected:1.7.0'
+    implementation 'androidx.core:core:1.17.0'
+}
